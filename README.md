@@ -64,8 +64,8 @@ $ docker run -it --rm \
 
 ### MIPS
 ```console
-#!/bin/bash
-docker run -it --rm \
+$ touch /hdimages/mips64el.qcow2
+$ docker run -it --rm \
     --device /dev/kvm \
     --name qemu-container-mips64el \
     --user="$(id --user):$(id --group)" \
