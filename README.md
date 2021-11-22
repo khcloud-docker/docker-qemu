@@ -32,7 +32,7 @@ The `native` variants for `amd64` only contain `qemu-system-x86_64` -- the non-`
 ```console
 $ git clone https://github.com/gnh1201/docker-qemu
 $ cd docker-qemu
-$ docker build -t <your alias>/qemu:6.1 .
+$ docker build -t gnh1201/qemu:6.1 .
 ```
 
 ## For non-native
@@ -59,7 +59,7 @@ $ docker run -it --rm \
     -e QEMU_MACHINE='virt' \
     -e QEMU_KERNEL=/tmp/vmlinuz \
     -e QEMU_INITRD=/tmp/initrd.gz \
-    <your alias>/qemu:6.1
+    gnh1201/qemu:6.1
 ```
 
 ### MIPS
@@ -86,7 +86,7 @@ $ docker run -it --rm \
     -e QEMU_KERNEL=/tmp/vmlinuz \
     -e QEMU_INITRD=/tmp/initrd.gz \
     -e QEMU_APPEND='console=ttyS0' \
-    <your alias>/qemu:6.1
+    gnh1201/qemu:6.1
 ```
 
 If ARM or MIPS is selected, `vmlinuz`(kernel image) and `initrd` are required. Please refer to this article and proceed.
