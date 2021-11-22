@@ -1,4 +1,4 @@
-# tianon/qemu
+# gnh1201/qemu (forked from tianon/docker-qemu)
 
 ```console
 $ touch /home/jsmith/hda.qcow2
