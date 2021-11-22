@@ -27,6 +27,14 @@ By default, this image will use [QEMU's user-mode networking stack](https://wiki
 
 The `native` variants for `amd64` only contain `qemu-system-x86_64` -- the non-`native` variants contain QEMU compiled for a variety of target CPUs.
 
+## Build Docker image
+
+```console
+$ git clone https://github.com/gnh1201/docker-qemu
+$ cd docker-qemu
+$ docker build -t <your alias>/qemu:6.1 .
+```
+
 ## For non-native
 
 ### ARM
