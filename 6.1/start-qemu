@@ -14,6 +14,7 @@ set -e
 #   QEMU_NO_SERIAL=1 (suppress automatic "-serial stdio")
 #   QEMU_NO_VNC=1 (suppress automatic "-vnc ':0'")
 #   QEMU_MACHINE  (for non-native)
+#   QEMU_CPUMODEL (for non-native)
 #   QEMU_BIOS     (filename)
 #   QEMU_KERNEL   (filename)
 #   QEMU_INITRD   (filename)
@@ -110,6 +111,12 @@ fi
 if [ -n "${QEMU_MACHINE:-}" ]; then
 	qemuArgs+=(
 		-machine "${QEMU_MACHINE}"
+	)
+fi
+
+if [ -n "${QEMU_CPUMODEL:-}" ]; then
+	qemuArgs+=(
+		-cpu "${QEMU_CPUMODEL}"
 	)
 fi
 
