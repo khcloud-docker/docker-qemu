@@ -29,6 +29,7 @@ The `native` variants for `amd64` only contain `qemu-system-x86_64` -- the non-`
 
 ## For non-native
 
+### ARM
 ```console
 $ touch /hdimages/armhf.qcow2
 $ docker run -it --rm \
@@ -53,6 +54,33 @@ $ docker run -it --rm \
     <your alias>/qemu:6.1
 ```
 
+### MIPS
+```console
+#!/bin/bash
+docker run -it --rm \
+    --device /dev/kvm \
+    --name qemu-container-mips64el \
+    --user="$(id --user):$(id --group)" \
+    -v /hdimages/mips64el.qcow2:/tmp/hda.qcow2 \
+    -v /bootimages/debian11-mips64el-malta/initrd.gz:/tmp/initrd.gz \
+    -v /bootimages/debian11-mips64el-malta/vmlinuz-5.10.0-9-5kc-malta:/tmp/vmlinuz \
+    -e QEMU_HDA=/tmp/hda.qcow2 \
+    -e QEMU_HDA_SIZE=20G \
+    -e QEMU_CPU=1 \
+    -e QEMU_RAM=1024 \
+    -v /cdimages/debian-11.1.0-mips64el-netinst.iso:/tmp/debian.iso:ro \
+    -e QEMU_CDROM=/tmp/debian.iso \
+    -e QEMU_BOOT='order=d' \
+    -e QEMU_PORTS='2375 2376' \
+    -e QEMU_ARCH='mips64el' \
+    -e QEMU_MACHINE='malta' \
+    -e QEMU_CPUMODEL='5KEc' \
+    -e QEMU_KERNEL=/tmp/vmlinuz \
+    -e QEMU_INITRD=/tmp/initrd.gz \
+    -e QEMU_APPEND='console=ttyS0' \
+    <your alias>/qemu:6.1
+```
+
 If ARM or MIPS is selected, `vmlinuz`(kernel image) and `initrd` are required. Please refer to this article and proceed.
 
    * [ARM/non-EFI](https://gist.github.com/KunoiSayami/934c7690dcf357f42537562dbdf90b56)
@@ -65,4 +93,3 @@ When using the non-native (e.g. ARM, MIPS) platform, it was confirmed that the s
 
   * [Manually generate password for /etc/shadow](https://unix.stackexchange.com/questions/81240/manually-generate-password-for-etc-shadow)
   * [How to mount qcow2 disk image on Linux](https://www.xmodulo.com/mount-qcow2-disk-image-linux.html)
-
