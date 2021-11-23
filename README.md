@@ -95,6 +95,19 @@ If ARM or MIPS is selected, `vmlinuz`(kernel image) and `initrd` are required. P
    * [MIPS/non-EFI](https://gist.github.com/bradfa/46ceff759a0cf9f392cc069c4f0f095a)
    * [ARM/EFI](https://gist.github.com/ag88/163a7c389af0c6dcef5a32a3394e8bac)
 
+### Manually bootloader activation
+
+When using the non-native (e.g. ARM, MIPS) platform, the bootloader must be extracted manually after the installation is completed.
+
+```console
+$ qemu-img convert armhf.qcow2 armhf.raw
+$ sudo mkdir /mnt/tmp
+$ sudo mount -o loop,offset=$((2048 * 512)) armhf.raw /mnt/tmp
+$ cd /mnt/tmp
+```
+
+Then, copy the `initrd` and `vmlinuz` files to an external directory. And load using `QEMU_KERNEL` and `QEMU_INITRD` variables.
+
 ### Manually root activation
 
 When using the non-native (e.g. ARM, MIPS) platform, it was confirmed that the settings were not reflected in `/etc/passwd` and `/etc/shadow`. Please refer to the two links below and set them up manually.
