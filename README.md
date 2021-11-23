@@ -103,7 +103,7 @@ When using the non-native (e.g. ARM, MIPS) platform, the bootloader must be extr
 $ qemu-img convert armhf.qcow2 armhf.raw
 $ sudo mkdir /mnt/tmp
 $ sudo mount -o loop,offset=$((2048 * 512)) armhf.raw /mnt/tmp
-$ cd /mnt/tmp
+$ cd /mnt/tmp/boot
 ```
 
 Then, copy the `initrd` and `vmlinuz` files to an external directory. And load using `QEMU_KERNEL` and `QEMU_INITRD` variables.
