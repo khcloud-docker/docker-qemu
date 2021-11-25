@@ -118,13 +118,13 @@ RUN set -eux; \
 	./configure \
 # let's add a link to our source code in the output of "--version" in case our users end up filing bugs against the QEMU project O:)
 		--with-pkgversion='https://github.com/tianon/docker-qemu' \
-		--target-list=' \
+#		--target-list=' \
 # system targets
 # (https://sources.debian.org/src/qemu/buster/debian/rules/#L59-L63, slimmed)
-			i386-softmmu x86_64-softmmu aarch64-softmmu arm-softmmu m68k-softmmu \
-			mips64-softmmu mips64el-softmmu ppc64-softmmu riscv64-softmmu \
-			sparc64-softmmu s390x-softmmu \
-		' \
+#			i386-softmmu x86_64-softmmu aarch64-softmmu arm-softmmu m68k-softmmu \
+#			mips64-softmmu mips64el-softmmu ppc64-softmmu riscv64-softmmu \
+#			sparc64-softmmu s390x-softmmu \
+#		' \
 # let's point "firmware path" to Debian's value so we get access to "OVMF.fd" and friends more easily
 		--firmwarepath=/usr/share/qemu:/usr/share/seabios:/usr/lib/ipxe/qemu \
 # https://salsa.debian.org/qemu-team/qemu/-/blob/058ab4ec8623766b50055c8c56d0d5448d52fb0a/debian/rules#L38
