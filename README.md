@@ -1,4 +1,6 @@
-# gnh1201/qemu (forked from tianon/docker-qemu)
+# gnh1201/docker-qemu
+
+This repository is forked from tianon/docker-qemu
 
 ```console
 $ touch /home/jsmith/hda.qcow2
