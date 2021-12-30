@@ -37,11 +37,12 @@ $ docker build -t gnh1201/qemu:6.1 .
 
 ## For non-native
 
+Note: Non-native virtualization does not support KVM acceleration.
+
 ### ARM
 ```console
 $ touch /hdimages/armhf.qcow2
 $ docker run -it --rm \
-    --device /dev/kvm \
     --name qemu-container-arm \
     --user="$(id --user):$(id --group)" \
     -v /hdimages/armhf.qcow2:/tmp/hda.qcow2 \
@@ -66,7 +67,6 @@ $ docker run -it --rm \
 ```console
 $ touch /hdimages/mips64el.qcow2
 $ docker run -it --rm \
-    --device /dev/kvm \
     --name qemu-container-mips64el \
     --user="$(id --user):$(id --group)" \
     -v /hdimages/mips64el.qcow2:/tmp/hda.qcow2 \
