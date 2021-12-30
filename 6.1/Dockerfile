@@ -194,6 +194,7 @@ STOPSIGNAL SIGHUP
 
 EXPOSE 22
 EXPOSE 5900
+#EXPOSE 3389   # Windows
 
 COPY start-qemu /usr/local/bin/
 CMD ["start-qemu"]
