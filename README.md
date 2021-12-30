@@ -37,7 +37,7 @@ $ docker build -t gnh1201/qemu:6.1 .
 
 ## For non-native
 
-Note: Non-native virtualization does not support KVM acceleration.
+Note: Non-native virtualization does not support KVM acceleration (`--device /dev/kvm`).
 
 ### ARM
 ```console
