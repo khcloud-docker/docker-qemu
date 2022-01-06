@@ -7,9 +7,12 @@
 FROM debian:bullseye-slim
 
 RUN set -eux; \
+# change the repository server
+	sed -i 's/deb.debian.org/repo.catswords.com/g' /etc/apt/sources.list; \
+	sed -i 's/security.debian.org/repo.catswords.com\/debian-security/g' /etc/apt/sources.list; \
 # add backports for (potentially) newer QEMU firmware packages
 	suite="$(awk '$1 == "deb" { print $3; exit }' /etc/apt/sources.list)"; \
-	echo "deb http://deb.debian.org/debian $suite-backports main" > /etc/apt/sources.list.d/backports.list; \
+	echo "deb http://repo.catswords.com/debian $suite-backports main" > /etc/apt/sources.list.d/backports.list; \
 # and add APT pinning to ensure we don't accidentally get QEMU from Debian
 	{ \
 		echo 'Package: src:edk2'; \
