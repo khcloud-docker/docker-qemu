@@ -37,6 +37,12 @@ $ cd docker-qemu
 $ docker build -t gnh1201/qemu:6.1 .
 ```
 
+or use [Docker Hub](https://hub.docker.com/repository/docker/gnh1201/qemu)
+
+```console
+$ docker pull gnh1201/qemu:6.1
+```
+
 ## For non-native
 
 Note: Non-native virtualization does not support KVM acceleration (Do not use `--device /dev/kvm`).
