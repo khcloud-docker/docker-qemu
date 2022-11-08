@@ -1,7 +1,5 @@
 # gnh1201/docker-qemu
 
-This repository is forked from tianon/docker-qemu
-
 ```console
 $ touch /home/jsmith/hda.qcow2
 $ docker run -it --rm \
@@ -122,3 +120,6 @@ When using the non-native (e.g. ARM, MIPS) platform, it was confirmed that the s
 
   * [Manually generate password for /etc/shadow](https://unix.stackexchange.com/questions/81240/manually-generate-password-for-etc-shadow)
   * [How to mount qcow2 disk image on Linux](https://www.xmodulo.com/mount-qcow2-disk-image-linux.html)
+
+### This is a long-term supported version
+This repository is a long-term supported version for Windows and multi-platform support. For information on the latest QEMU version, see the [tianon/docker-qemu](https://github.com/tianon/docker-qemu) repository.
