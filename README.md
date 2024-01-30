@@ -14,7 +14,7 @@ $ docker run -it --rm \
 	-e QEMU_CDROM=/tmp/debian.iso \
 	-e QEMU_BOOT='order=d' \
 	-e QEMU_PORTS='2375 2376' \
-	tianon/qemu:native
+	gnh1201/qemu:6.1    # or `tianon/qemu:native`
 ```
 
 Note: port 22 will always be mapped (regardless of the contents of `QEMU_PORTS`).
