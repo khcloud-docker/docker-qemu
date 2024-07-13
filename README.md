@@ -127,3 +127,4 @@ This repository is a long-term supported version for Windows and multi-platform 
 ## Report abuse
 - abuse@catswords.net
 - ActivityPub [@catswords_oss@catswords.social](https://catswords.social/@catswords_oss)
+- [Join Catswords on Microsoft Teams](https://teams.live.com/l/community/FEACHncAhq8ldnojAI)
