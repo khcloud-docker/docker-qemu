@@ -129,3 +129,9 @@ This repository is a long-term supported version for Windows and multi-platform 
 - ActivityPub [@catswords_oss@catswords.social](https://catswords.social/@catswords_oss)
 - [Join Catswords OSS on Microsoft Teams](https://teams.live.com/l/community/FEACHncAhq8ldnojAI)
 - [Join Catswords OSS #docker-qemu on Discord](https://discord.gg/zPfx2VrcRs)
+
+
+在Linux宿主机上运行windows容器：
+
+https://github.com/gnh1201/docker-qemu/wiki/Windows-Guest
+
